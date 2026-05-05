@@ -7,7 +7,7 @@
     <!-- Pode importar o CSS do Font Awesome assim: 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     -->
-    <title>InovaCat</title>
+    <title>Sahara Penguin</title>
     <style>
         /* Importa o CSS do font Awesome */
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
@@ -38,45 +38,23 @@
             gap: .5rem;
         }
 
-        /* header filho direto de #wrap */
-        #wrap>header {
-            background-color: #222;
-            color: white;
+        #wrap>nav {
+            background-color: orange;
             display: flex;
             align-items: center;
+            justify-content: space-around;
         }
 
-        .logo {
-            font-size: 4rem;
-            color: orange;
-            margin: .5rem;
-        }
-
-        .title {
-            margin: 0;
-            font-family: monospace;
-            font-weight: normal;
-            text-align: center;
-            font-size: 2rem;
-        }
-
-        .title strong {
-            color: orange;
-       }
-
-       .title small {
-        display: block;
-        font-size: .75rem;
-        letter-spacing: .05rem;
-       }
-
-        #wrap>header a {
+        #wrap>nav a {
             text-decoration: none;
-            color: white;
+            color: #222;
+            padding: 1rem;
+            transition: .2s;
         }
 
-        #wrap>nav {
-            background-color: yellow;
+        #wrap>nav a:hover {
+            background-color: #222;
+            color: orange;
         }
 
         #wrap>main {
@@ -104,7 +82,7 @@
         }
 
 
-        /* Media Queries */
+        /* Media Queries - Telas maiores 768px */
 
         @media screen and (min-width: 768px) {
             #wrap>main {
@@ -117,6 +95,79 @@
                 flex-basis: 220px;
             }
         }
+
+        #wrap>header {
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .header-search {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .header-search input, .header-search button {
+            /* Herda a fonte e o tamanho da fonte do body */
+            font-family: inherit;
+            font-size: inherit;
+            border: none;
+            padding: .5rem 1rem;
+        }
+
+        .header-search input {
+            flex-grow: 1;
+            border-radius: .4rem 0 0 .4rem;
+        }
+
+        .header-search button {
+            border-radius: 0 .4rem .4rem 0;
+            padding: .5rem;
+            background-color: #e7e7e7;
+        }
+
+        #wrap>header a {
+            text-decoration: none;
+        }
+
+        #wrap>header .logo {
+            font-size: 4rem;
+            color: orange;
+        }
+
+        #wrap>header .title {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #wrap>header .title h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #wrap>header .title i {
+            font-size: small;
+            color: orange;
+        }
+
+        #wrap>header .title span {
+            color: orange;
+        }
+
+        #wrap>header .title small {
+            font-family: monospace;
+            letter-spacing: .25rem;
+        }
     </style>
 </head>
 
@@ -125,20 +176,32 @@
     <div id="wrap">
 
         <header>
-            <a href="#Início"><i class="logo fa-solid fa-cat fa-fw"></i></a>
-            <a href="#Início">
-                <h1 class="title">
-                    <span>inova<strong>Cat</strong></span>
-                    <small>Categorizando tudo!</small>
-                </h1>
-            </a>
+            <!--  Logotipo e nome do site -->
+            <div class="header-logo">
+                <a href="#Início" class="logo"><i class="fa-brands fa-linux"></i></a>
+                <a href="#Início" class="title">
+                    <h1>
+                        <i class="fa-solid fa-less-than"></i>
+                        <span>S</span>ahara<span>P</span>enguin
+                        <i class="fa-solid fa-greater-than"></i>
+                    </h1>
+                    <small>Categorize everything!</small>
+                </a>
+            </div>
+
+            <!-- Formulário de pesquisa -->
+            <form action="" method="get" class="header-search">
+                <input type="search" name="q" placeholder="Search here...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></button>
+            </form>
+
         </header>
 
         <nav>
-            <a href="#Início"><span>Início</span></a>
-            <a href="#Lista"><span>Lista</span></a>
-            <a href="#Contato"><span>Contato</span></a>
-            <a href="#Sobre"><span>Sobre</span></a>
+            <a href="#Início"><i class="fa-solid fa-house fa-fw"></i><span>Home</span></a>
+            <a href="#Lista"><i class="fa-solid fa-clipboard-list fa-fw"></i><span>list</span></a>
+            <a href="#Contato"><i class="fa-solid fa-comments fa-fw"></i><span>Contact</span></a>
+            <a href="#Sobre"><i class="fa-solid fa-circle-info fa-fw"></i><span>About</span></a>
         </nav>
 
         <main>
@@ -150,7 +213,7 @@
             </article>
 
             <aside>
-                <header>Conteúdo Auxiliar</header>
+                <header>Auxiliary Content</header>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti harum maxime labore repellat id
                 ratione. Est magnam porro, tenetur molestias illo ipsam temporibus sunt doloribus rem perferendis
                 sapiente assumenda explicabo.
@@ -158,7 +221,7 @@
 
         </main>
 
-        <footer>Rodapé</footer>
+        <footer>Footer</footer>
 
     </div>
 
